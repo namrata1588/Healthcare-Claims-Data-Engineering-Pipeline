@@ -1,0 +1,39 @@
+# Paths for Delta Lake layers
+paths:
+  bronze: "/FileStore/bronze/claims"
+  silver: "/FileStore/silver/claims"
+  gold: "/FileStore/gold/claims"
+
+# Input dataset
+input_csv: "/FileStore/sample_data/claims.csv"
+
+# Data Quality thresholds
+dq:
+  max_null_percentage: 5  # Maximum allowed nulls per column
+  unique_columns:
+    - claim_id
+    - member_id
+  allowed_genders: ["M", "F"]
+  allowed_claim_status: ["Approved", "Pending", "Rejected"]
+  fraud_flag_values: [0,1]
+
+# Column types (optional, can be used in PySpark validation)
+column_types:
+  claim_id: string
+  member_id: string
+  age: integer
+  gender: string
+  claim_date: date
+  admission_date: date
+  discharge_date: date
+  provider_speciality: string
+  billed_amount: float
+  paid_amount: float
+  fraud_flag: integer
+  diagnosis_code: string
+  procedure_code: string
+  state: string
+  claim_status: string
+
+# Other parameters
+batch_size: 1000  # Rows per batch (if needed)
