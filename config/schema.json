@@ -1,0 +1,19 @@
+{
+  "columns": {
+    "claim_id": {"type": "string", "nullable": false},
+    "member_id": {"type": "string", "nullable": false},
+    "age": {"type": "integer", "nullable": false, "min": 0, "max": 120},
+    "gender": {"type": "string", "nullable": false, "allowed_values": ["M", "F"]},
+    "claim_date": {"type": "date", "nullable": false, "format": "yyyy-MM-dd"},
+    "admission_date": {"type": "date", "nullable": true, "format": "yyyy-MM-dd"},
+    "discharge_date": {"type": "date", "nullable": true, "format": "yyyy-MM-dd"},
+    "provider_speciality": {"type": "string", "nullable": false},
+    "billed_amount": {"type": "float", "nullable": false, "min": 0},
+    "paid_amount": {"type": "float", "nullable": false, "min": 0},
+    "fraud_flag": {"type": "integer", "nullable": false, "allowed_values": [0,1]},
+    "diagnosis_code": {"type": "string", "nullable": false},
+    "procedure_code": {"type": "string", "nullable": true},
+    "state": {"type": "string", "nullable": false},
+    "claim_status": {"type": "string", "nullable": false, "allowed_values": ["Approved", "Pending", "Rejected"]}
+  }
+}
